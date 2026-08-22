@@ -25,15 +25,11 @@ share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-MANIFEST
+PIPFILE.lock
 
 # PyInstaller
 *.manifest
 *.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
 
 # Unit test / coverage reports
 htmlcov/
@@ -130,7 +126,5 @@ dmypy.json
 *~
 .DS_Store
 
-# Home Assistant
-homeassistant.db
-home-assistant.log
+# Project specific
 .homeassistant/
