@@ -1,6 +1,6 @@
 {
   "domain": "ld2410_ble",
-  "name": "LD2410 BLE",
+  "name": "HLK2410",
   "bluetooth": [
     {
       "local_name": "HLK-LD2410B_*"

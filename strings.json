@@ -1,106 +1,115 @@
 {
   "config": {
-    "abort": {
-      "already_configured": "[%key:common::config_flow::abort::already_configured_device%]",
-      "already_in_progress": "[%key:common::config_flow::abort::already_in_progress%]",
-      "no_devices_found": "[%key:common::config_flow::abort::no_devices_found%]",
-      "not_supported": "Device not supported"
-    },
-    "error": {
-      "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
-      "unknown": "[%key:common::config_flow::error::unknown%]"
-    },
-    "flow_title": "{name}",
     "step": {
       "user": {
+        "title": "HLK2410 Device",
+        "description": "Select the HLK2410 device to add",
         "data": {
-          "address": "Bluetooth address"
+          "address": "Device Address"
         }
+      },
+      "bluetooth": {
+        "title": "HLK2410 Device",
+        "description": "Confirm adding the HLK2410 device"
       }
+    },
+    "abort": {
+      "already_configured": "Device is already configured",
+      "no_devices_found": "No HLK2410 devices found. Make sure they are powered on and in pairing mode"
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the device. Make sure it is powered on and in range",
+      "unknown": "Unexpected error occurred"
     }
   },
   "entity": {
+    "binary_sensor": {
+      "is_moving": {
+        "name": "Motion"
+      },
+      "is_static": {
+        "name": "Occupancy"
+      }
+    },
     "sensor": {
-      "detection_distance": {
-        "name": "Detection distance"
-      },
-      "max_motion_gates": {
-        "name": "Max motion gates"
-      },
-      "max_static_gates": {
-        "name": "Max static gates"
-      },
-      "motion_energy_gate_0": {
-        "name": "Motion energy gate 0"
-      },
-      "motion_energy_gate_1": {
-        "name": "Motion energy gate 1"
-      },
-      "motion_energy_gate_2": {
-        "name": "Motion energy gate 2"
-      },
-      "motion_energy_gate_3": {
-        "name": "Motion energy gate 3"
-      },
-      "motion_energy_gate_4": {
-        "name": "Motion energy gate 4"
-      },
-      "motion_energy_gate_5": {
-        "name": "Motion energy gate 5"
-      },
-      "motion_energy_gate_6": {
-        "name": "Motion energy gate 6"
-      },
-      "motion_energy_gate_7": {
-        "name": "Motion energy gate 7"
-      },
-      "motion_energy_gate_8": {
-        "name": "Motion energy gate 8"
-      },
       "moving_target_distance": {
-        "name": "Moving target distance"
-      },
-      "moving_target_energy": {
-        "name": "Moving target energy"
-      },
-      "static_energy_gate_0": {
-        "name": "Static energy gate 0"
-      },
-      "static_energy_gate_1": {
-        "name": "Static energy gate 1"
-      },
-      "static_energy_gate_2": {
-        "name": "Static energy gate 2"
-      },
-      "static_energy_gate_3": {
-        "name": "Static energy gate 3"
-      },
-      "static_energy_gate_4": {
-        "name": "Static energy gate 4"
-      },
-      "static_energy_gate_5": {
-        "name": "Static energy gate 5"
-      },
-      "static_energy_gate_6": {
-        "name": "Static energy gate 6"
-      },
-      "static_energy_gate_7": {
-        "name": "Static energy gate 7"
-      },
-      "static_energy_gate_8": {
-        "name": "Static energy gate 8"
+        "name": "Moving Target Distance"
       },
       "static_target_distance": {
-        "name": "Static target distance"
+        "name": "Static Target Distance"
+      },
+      "detection_distance": {
+        "name": "Detection Distance"
+      },
+      "moving_target_energy": {
+        "name": "Moving Target Energy"
       },
       "static_target_energy": {
-        "name": "Static target energy"
+        "name": "Static Target Energy"
+      },
+      "max_motion_gates": {
+        "name": "Max Motion Gates"
+      },
+      "max_static_gates": {
+        "name": "Max Static Gates"
+      },
+      "motion_energy_gate_0": {
+        "name": "Motion Energy Gate 0"
+      },
+      "motion_energy_gate_1": {
+        "name": "Motion Energy Gate 1"
+      },
+      "motion_energy_gate_2": {
+        "name": "Motion Energy Gate 2"
+      },
+      "motion_energy_gate_3": {
+        "name": "Motion Energy Gate 3"
+      },
+      "motion_energy_gate_4": {
+        "name": "Motion Energy Gate 4"
+      },
+      "motion_energy_gate_5": {
+        "name": "Motion Energy Gate 5"
+      },
+      "motion_energy_gate_6": {
+        "name": "Motion Energy Gate 6"
+      },
+      "motion_energy_gate_7": {
+        "name": "Motion Energy Gate 7"
+      },
+      "motion_energy_gate_8": {
+        "name": "Motion Energy Gate 8"
+      },
+      "static_energy_gate_0": {
+        "name": "Static Energy Gate 0"
+      },
+      "static_energy_gate_1": {
+        "name": "Static Energy Gate 1"
+      },
+      "static_energy_gate_2": {
+        "name": "Static Energy Gate 2"
+      },
+      "static_energy_gate_3": {
+        "name": "Static Energy Gate 3"
+      },
+      "static_energy_gate_4": {
+        "name": "Static Energy Gate 4"
+      },
+      "static_energy_gate_5": {
+        "name": "Static Energy Gate 5"
+      },
+      "static_energy_gate_6": {
+        "name": "Static Energy Gate 6"
+      },
+      "static_energy_gate_7": {
+        "name": "Static Energy Gate 7"
+      },
+      "static_energy_gate_8": {
+        "name": "Static Energy Gate 8"
       }
     }
   },
-  "exceptions": {
-    "device_not_found": {
-      "message": "Could not find LD2410B device with address {address}: {reason}"
-    }
+  "config_flow_errors": {
+    "device_not_found": "Device not found. Reason: {reason}"
   }
 }

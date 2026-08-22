@@ -1,4 +1,4 @@
-"""Constants for the LD2410 BLE integration."""
+"""Constants for the HLK2410 integration."""
 
 DOMAIN = "ld2410_ble"
 
