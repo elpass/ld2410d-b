@@ -1,0 +1,128 @@
+# LD2410D-B BLE Integration
+
+A Home Assistant integration for the HiLink LD2410D-B Bluetooth motion sensor.
+
+## Overview
+
+This integration provides support for the **HLK-2410D-B** and **HLK-LD2410B** Bluetooth motion detection sensors in Home Assistant. These sensors detect both moving and static targets, providing distance and energy measurements for advanced motion detection automation.
+
+## Features
+
+- **Motion Detection**: Real-time detection of moving targets (MOTION sensor)
+- **Occupancy Detection**: Static occupancy detection (OCCUPANCY sensor)
+- **Distance Measurement**: Moving and static target distance in centimeters
+- **Energy Levels**: Target energy readings for both motion and static detection
+- **Gate-based Configuration**: 9 configurable detection gates for motion and static detection
+- **Bluetooth Discovery**: Automatic device discovery via Bluetooth
+- **Local Push**: Real-time updates via local Bluetooth connection
+
+## Supported Models
+
+- **HLK-LD2410B** - Original model
+- **HLK-LD2410_*** - HLK variant
+- **HLK-2410D-B** - New D-series model
+
+## Installation
+
+### Manual Installation
+
+1. Clone or download this repository
+2. Copy the entire folder to your Home Assistant `custom_components` directory:
+   ```
+   <config>/custom_components/ld2410_ble/
+   ```
+3. Restart Home Assistant
+4. Go to Settings → Devices & Services → Create Automation
+5. Search for "LD2410 BLE" and follow the setup wizard
+
+### HACS Installation
+
+To be added to HACS once published.
+
+## Configuration
+
+The integration uses Bluetooth discovery. Simply add your device through the Home Assistant UI:
+
+1. Go to **Settings** → **Devices & Services**
+2. Click **Create Automation**
+3. Search for **LD2410 BLE**
+4. Select your device from the discovered list
+5. Complete the configuration flow
+
+## Entities
+
+### Binary Sensors
+- **Motion** - Detects moving targets (Motion class)
+- **Occupancy** - Detects static presence (Occupancy class)
+
+### Sensors
+- **Moving Target Distance** - Distance to moving target (cm)
+- **Static Target Distance** - Distance to static target (cm)
+- **Detection Distance** - Overall detection range (cm)
+- **Moving Target Energy** - Energy level of moving target
+- **Static Target Energy** - Energy level of static target
+- **Motion Energy Gates** (0-8) - Individual gate energy for motion detection
+- **Static Energy Gates** (0-8) - Individual gate energy for static detection
+- **Max Motion Gates** - Number of motion detection gates
+- **Max Static Gates** - Number of static detection gates
+
+## Requirements
+
+- **Home Assistant** 2024.1.0 or later
+- **Bluetooth Adapter** on your Home Assistant device
+- **LD2410B or LD2410D-B sensor** with Bluetooth capability
+
+## Dependencies
+
+- `bluetooth-data-tools==1.29.21`
+- `ld2410-ble==0.1.1`
+- `bluetooth_adapters` (Home Assistant component)
+
+## Troubleshooting
+
+### Device Not Found
+- Ensure the sensor is powered and in Bluetooth pairing mode
+- Check that your Home Assistant device has Bluetooth capability
+- Try moving closer to the device
+- Restart Home Assistant
+
+### Connection Issues
+- Verify the Bluetooth signal strength
+- Clear nearby Bluetooth interference
+- Restart the sensor device
+- Check Home Assistant logs for detailed errors
+
+## Development
+
+### Directory Structure
+```
+ld2410_ble/
+├── __init__.py           # Integration setup and main logic
+├── binary_sensor.py      # Binary sensor entities
+├── config_flow.py        # Configuration UI flow
+���── const.py              # Constants and device names
+├── coordinator.py        # Data update coordinator
+├── manifest.json         # Integration metadata
+├── models.py             # Type definitions
+├── sensor.py             # Sensor entities
+└── strings.json          # Localization strings
+```
+
+## License
+
+Licensed under the same terms as Home Assistant (Apache 2.0)
+
+## Support
+
+For issues, questions, or feature requests, please visit:
+- [GitHub Issues](https://github.com/elpass/ld2410d-b/issues)
+
+## Credits
+
+- Original integration: [@930913](https://github.com/930913)
+- LD2410 BLE Library: [ld2410-ble](https://pypi.org/project/ld2410-ble/)
+- Home Assistant Bluetooth Framework
+
+## Disclaimer
+
+This is a community-maintained integration and is not affiliated with HiLink or Home Assistant official integrations.
