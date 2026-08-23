@@ -1,7 +1,7 @@
 {
   "domain": "hlk2410d_b",
   "name": "HLK2410D-B",
-  "codeowners": ["@930913", "@elpass"],
+  "codeowners": ["@elpass"],
   "config_flow": true,
   "dependencies": ["bluetooth_adapters"],
   "documentation": "https://github.com/elpass/hlk2410d-b",
